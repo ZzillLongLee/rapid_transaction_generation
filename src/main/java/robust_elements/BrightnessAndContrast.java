@@ -1,4 +1,4 @@
-package adjustment_elements;
+package robust_elements;
 
 import java.awt.image.BufferedImage;
 import java.awt.image.RescaleOp;

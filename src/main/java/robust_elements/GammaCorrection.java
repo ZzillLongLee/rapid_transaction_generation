@@ -1,11 +1,11 @@
-package adjustment_elements;
+package robust_elements;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class GammaCorrection {
 
-    public BufferedImage gammaCorrection(BufferedImage original, double gamma) {
+    public BufferedImage gammaCorrect(BufferedImage original, double gamma) {
 
         int alpha, red, green, blue;
         int newPixel;
