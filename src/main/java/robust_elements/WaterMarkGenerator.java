@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public class WaterMarkGenerator {
 
-    public BufferedImage addWaterMark(BufferedImage imageData) throws IOException {
+    public static BufferedImage addWaterMark(BufferedImage imageData) throws IOException {
             String text = "This is a water mark";
             Graphics2D g2d = (Graphics2D) imageData.getGraphics();
             // initializes necessary graphic properties

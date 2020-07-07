@@ -6,7 +6,7 @@ import java.awt.image.BufferedImage;
 
 public class ImageScaler {
 
-    public BufferedImage scaleImg(BufferedImage imageData, int scale){
+    public static BufferedImage scaleImg(BufferedImage imageData, int scale){
         int w = imageData.getWidth();
         int h = imageData.getHeight();
         BufferedImage scaledImage = new BufferedImage((w * scale),(h * scale), BufferedImage.TYPE_INT_ARGB);

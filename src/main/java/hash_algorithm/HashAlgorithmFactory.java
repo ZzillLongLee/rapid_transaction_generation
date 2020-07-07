@@ -7,6 +7,15 @@ import static util.Constants.Average_Hash;
 import static util.Constants.Difference_Hash;
 
 public class HashAlgorithmFactory {
+
+    private static class SingletonHelper{
+        private static final HashAlgorithmFactory INSTANCE = new HashAlgorithmFactory();
+    }
+
+    public static HashAlgorithmFactory getInstance(){
+        return SingletonHelper.INSTANCE;
+    }
+
     public HashAlgorithm getHashInstance(int type) {
         //use the switch statement to get various type of hash algorithm through the factory method pattern
         switch (type){

@@ -5,7 +5,7 @@ import java.io.IOException;
 
 public class ImageCropper {
 
-    public BufferedImage cropImage(BufferedImage imgData, double amount) throws IOException {
+    public static BufferedImage cropImage(BufferedImage imgData, double amount) throws IOException {
 
         int height = imgData.getHeight();
         int width = imgData.getWidth();

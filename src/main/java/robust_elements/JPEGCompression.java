@@ -15,7 +15,7 @@ import java.io.OutputStream;
 
 public class JPEGCompression {
 
-    public BufferedImage compressImage(BufferedImage image, String jpegFilePath, float quality) throws IOException {
+    public static BufferedImage compressImage(BufferedImage image, String jpegFilePath, float quality) throws IOException {
         // save jpeg image with specific quality. "1f" corresponds to 100% , "0.7f" corresponds to 70%
         ImageWriter jpgWriter = ImageIO.getImageWritersByFormatName("jpeg").next();
 

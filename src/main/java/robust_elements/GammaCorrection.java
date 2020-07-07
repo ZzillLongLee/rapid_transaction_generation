@@ -5,7 +5,7 @@ import java.awt.image.BufferedImage;
 
 public class GammaCorrection {
 
-    public BufferedImage gammaCorrect(BufferedImage original, double gamma) {
+    public static BufferedImage gammaCorrect(BufferedImage original, double gamma) {
 
         int alpha, red, green, blue;
         int newPixel;
@@ -43,7 +43,7 @@ public class GammaCorrection {
     }
 
     // Create the gamma correction lookup table
-    private int[] gamma_LUT(double gamma_new) {
+    private static int[] gamma_LUT(double gamma_new) {
         int[] gamma_LUT = new int[256];
 
         for(int i=0; i<gamma_LUT.length; i++) {
@@ -54,7 +54,7 @@ public class GammaCorrection {
     }
 
     // Convert R, G, B, Alpha to standard 8 bit
-    private int colorToRGB(int alpha, int red, int green, int blue) {
+    private static int colorToRGB(int alpha, int red, int green, int blue) {
 
         int newPixel = 0;
         newPixel += alpha;
