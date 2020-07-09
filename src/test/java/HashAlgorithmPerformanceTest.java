@@ -1,11 +1,12 @@
 import hash_algorithm.HashAlgorithm;
 import hash_algorithm.HashAlgorithmFactory;
 import org.junit.jupiter.api.Test;
-import util.Constants;
+import util.HashType;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.util.ArrayList;
@@ -17,6 +18,8 @@ public class HashAlgorithmPerformanceTest {
 
     @Test
     public void hashPerformanceTest() throws IOException {
+        FileWriter fw = new FileWriter("Data\\SHA512HashTime.txt");
+
         HashAlgorithmFactory hashAlgorithmFactory = HashAlgorithmFactory.getInstance();
         System.out.println("Performance Test is started.");
         System.out.println("-----------------------------------------------");
@@ -31,7 +34,7 @@ public class HashAlgorithmPerformanceTest {
                 File file = new File(dirName + "\\" + filePath);
                 BufferedImage imageData = ImageIO.read(file);
                 long startTime = System.currentTimeMillis();
-                HashAlgorithm hashAlgorithm1 = hashAlgorithmFactory.getHashInstance(Constants.Average_Hash);
+                HashAlgorithm hashAlgorithm1 = hashAlgorithmFactory.getHashInstance(HashType.SHA512_Hash);
                 BigInteger result1 = hashAlgorithm1.hashFrame(imageData);
                 long stopTime = System.currentTimeMillis();
                 long duration = (stopTime - startTime);
@@ -42,8 +45,10 @@ public class HashAlgorithmPerformanceTest {
             avgTimeHashMap.put(filePath, avgTime);
         }
         for (Map.Entry<String, Double> avgTimeValue : avgTimeHashMap.entrySet()) {
-            System.out.println("FileName" + avgTimeValue.getKey() + " AverageTime:" + avgTimeValue.getValue());
+            fw.write("FileName" + avgTimeValue.getKey() + " AverageTime:" + avgTimeValue.getValue()+"\n");
         }
+        fw.flush();
+        fw.close();
     }
 
     private double getAverageTime(List<Long> timeList) {

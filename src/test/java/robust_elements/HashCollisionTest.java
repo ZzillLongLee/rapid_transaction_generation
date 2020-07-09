@@ -2,17 +2,14 @@ package robust_elements;
 
 import hash_algorithm.HashAlgorithm;
 import hash_algorithm.HashAlgorithmFactory;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import util.Constants;
+import util.HashType;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotSame;
@@ -24,7 +21,7 @@ public class HashCollisionTest {
     public void hashCollisionPerformanceTest() throws IOException {
 
         HashAlgorithmFactory hashAlgorithmFactory = HashAlgorithmFactory.getInstance();
-        HashAlgorithm hashAlgorithm = hashAlgorithmFactory.getHashInstance(Constants.Average_Hash);
+        HashAlgorithm hashAlgorithm = hashAlgorithmFactory.getHashInstance(HashType.Average_Hash);
 
         String dirName = "D:\\git\\rapid_transaction_generation\\Data\\ImageData";
         File dir = new File(dirName);

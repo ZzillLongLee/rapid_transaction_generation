@@ -1,10 +1,8 @@
 package hash_algorithm;
 
-import util.Constants;
-
-import static util.Constants.*;
-import static util.Constants.Average_Hash;
-import static util.Constants.Difference_Hash;
+import static util.HashType.*;
+import static util.HashType.Average_Hash;
+import static util.HashType.Difference_Hash;
 
 public class HashAlgorithmFactory {
 
